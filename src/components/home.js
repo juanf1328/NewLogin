@@ -1,22 +1,20 @@
-import axios from "axios";
+//import axios from "axios";
 import { Component } from "react";
 
 export default class Home extends Component{
 
-    componentDidMount() {
-        axios.get('user').then(
-            res => {
-                console.log(res)
-            },
-            err => {
-                console.log(err)
-            }
-        )
-    }
+   
 
 
 
     render() {
+
+        if(this.props.user){
+            return(
+                <h2>Hi {this.props.user.first_name} {this.props.user.laste_name}</h2>
+            )
+        }
+
         return (
             <h2>Welcome</h2>
         )
