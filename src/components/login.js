@@ -1,6 +1,6 @@
 import axios from "axios";
 import { React, Component } from "react";
-//import {Link, Outlet} from "react-router-dom";
+import { Navigate  } from "react-router-dom";
 
 export default class Login extends Component{
 
@@ -12,10 +12,16 @@ export default class Login extends Component{
         email: this.email,
         password: this.password
     };
+    
+
 
     axios.post('login', data)
     .then(res => {
        localStorage.setItem('token', res.data.token);
+       this.setState({
+           loggedIn: true
+       });
+       this.props.setUser(res.data.user);
     })
     .catch(err => {
         console.log(err)
@@ -24,6 +30,9 @@ export default class Login extends Component{
 };
 
     render() {
+        if(this.state.loggedIn){
+            return <Navigate to='/components' />
+        }
         return (
             <form onSubmit={this.handleSubmit}>
   

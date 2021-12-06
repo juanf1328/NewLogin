@@ -16,9 +16,7 @@ export default class App extends Component {
    
     axios.get('user').then(
         res => {
-            this.setState({
-                user: res.data
-            });
+           this.setUser(res.data);
         },
         err => {
             console.log(err)
@@ -26,16 +24,22 @@ export default class App extends Component {
     )
 };
 
+setUser = user => {
+   this.setState({
+      user: user
+  });
+};
+
           render(){
         return(
           <BrowserRouter>
           <div className="App">
-             <Nav user={this.state.user}/>
+             <Nav user={this.state.user} setUser={this.setUser}/>
                     
              <Routes>
-                   <Route path="/" element={() => <Home user={this.state.user} /> } />
-                  <Route path="/login" element={Login} />
-                   <Route path="/register" element={Register} />
+                   <Route exact path="/components" element={<Home/> } />
+                    <Route exact path="/components/Login" element={<Login/>} />
+                   <Route exact path="/components/Register" element={<Register/>} />
               </Routes>
             </div>
           </BrowserRouter>
