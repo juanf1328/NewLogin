@@ -1,23 +1,23 @@
+import React from 'react';
 import './App.css';
-import welcomeImg from './assets/welcome.jpg';
-import { Signup } from './components/Signup';
-
+//import helloImg from './assets/hello.jpg';
+import { Signup }  from './components/Signup';
+import { Login } from './components/Login';
+import { Home }  from './components/home';
+import NavBar from './components/Navbar';
+import { Routes, Router, Route } from "react-router-dom"
 
 function App() {
-  return (
-    <div className="container mt-3">
-      <div className="row">
-        <div className="col-md-5">
-            <Signup />
-        </div>
-        <div className="col-md-7">
-            <img className="img-fluid w-100" src={welcomeImg} alt="" />
-        </div>
-
-      </div>
-      
-    </div>
-  );
+  return( 
+      <Router>
+       <NavBar />
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path=".components/Login" element={<Login/>}/>
+          <Route path="/Signup" element={<Signup/>}/>
+        </Routes>
+      </Router>
+  )
 }
 
 export default App;
