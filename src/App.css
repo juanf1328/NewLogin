@@ -1,16 +1,16 @@
 body{
-  background: linear-gradient(to left, #2193b0, #6dd5ed);
+  background: linear-gradient(to left, #ff416c, #ff4b2b);
   font-family: sans-serif;
 }
 
 h1{
   font-size:7rem;
-  color:#fff;
+  color:#203A43;
 }
 
 label{
-  color: #FFF ;
-  
+  color: #203A43 ;
+  font-size: 30px;
 }
 .form-inner .form-group:focus-within label{
   color: #FE4880;
@@ -26,4 +26,9 @@ button:hover{
 
 .error{
  color: #ac2a87;
+ font-size: 25px;
+}
+
+.nombre{
+  size: 8px;
 }

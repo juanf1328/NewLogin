@@ -1,23 +1,23 @@
-import React from 'react';
+import React from "react";
 import './App.css';
-//import helloImg from './assets/hello.jpg';
-import { Signup }  from './components/Signup';
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Home }from './components/Home';
 import { Login } from './components/Login';
-import { Home }  from './components/home';
-import NavBar from './components/Navbar';
-import { Routes, Router, Route } from "react-router-dom"
+import { Signup } from './components/Signup';
+
 
 function App() {
-  return( 
-      <Router>
-       <NavBar />
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path=".components/Login" element={<Login/>}/>
-          <Route path="/Signup" element={<Signup/>}/>
-        </Routes>
-      </Router>
-  )
+  return (
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/Login" component={Login} />
+        <Route path="/Signup" component={Signup} />
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;

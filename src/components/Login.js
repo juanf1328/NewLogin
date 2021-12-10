@@ -30,8 +30,8 @@ export const Login = () => {
                 <div>
                 <h1 className="my-4 font-weight-bold-display-4">Login</h1>
                 <Form>
-                    <TextField label="Email" name="email" type="email" />
-                    <TextField label="Password" name="password" type="password" />
+                    <TextField className="nombre" label="Email" name="email" type="email" />
+                    <TextField className="nombre" label="Password" name="password" type="password" />
                     <button className="btn btn-dark mt-3" type="submit">Login</button>
                     <button className="btn btn-dark mt-3 ml-3" type="reset">Clear</button>
                 </Form>
