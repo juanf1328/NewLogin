@@ -4,8 +4,7 @@ import {
   NavLink,
   Bars,
   NavMenu,
-  NavBtn,
-  NavBtnLink,
+ 
 } from "./NavbarElements";
 
 const Navbar = () => {
@@ -25,9 +24,7 @@ const Navbar = () => {
                 <NavLink to="/Login" activeStyle>
                     Login
                 </NavLink>
-                <NavBtn>
-                    <NavBtnLink to="/sign-up">Sign Up</NavBtnLink>                
-                </NavBtn>
+               
             </NavMenu> 
            </Nav> 
         </>

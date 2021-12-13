@@ -1,11 +1,15 @@
 body{
   background: linear-gradient(to left, #ff416c, #ff4b2b);
   font-family: sans-serif;
+  display: grid;
+ 
+  
 }
 
 h1{
   font-size:7rem;
   color:#203A43;
+  text-align: center;
 }
 
 label{
@@ -25,10 +29,25 @@ button:hover{
 }
 
 .error{
- color: #ac2a87;
+ color: #ffff;
  font-size: 25px;
 }
 
+.formulario {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}  
+
 .nombre{
-  size: 8px;
+  display: block;
+  width: 400px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
 }
+
